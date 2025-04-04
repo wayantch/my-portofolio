@@ -62,7 +62,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 <div className="card-inner">
                     <div className="card-front">
                         <img
-                            src="/src/assets/images/profile.jpg"
+                            src="assets/images/profile.jpg"
+                            className="w-32 h-32 rounded-full object-cover"
+                            alt="profile"
+                        />
+                    </div>
+                    <div className="card-back">
+                        <img
+                            src="assets/images/profile-back.jpg"
                             className="w-32 h-32 rounded-full object-cover"
                             alt="profile"
                         />
