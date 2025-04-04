@@ -24,15 +24,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }, [location.pathname]);
 
     const NAVLINKS = [
-        { name: "Home", path: "/", icon: <HiHome className="text-xl" /> },
-        { name: "About", path: "/about", icon: <BiUser className="text-xl" /> },
+        { name: "Beranda", path: "/", icon: <HiHome className="text-xl" /> },
         {
-            name: "Projects",
+            name: "Tentang",
+            path: "/about",
+            icon: <BiUser className="text-xl" />,
+        },
+        {
+            name: "Proyek",
             path: "/projects",
             icon: <BsBriefcase className="text-xl" />,
         },
         {
-            name: "Contact",
+            name: "Kontak",
             path: "/contact",
             icon: <BsEnvelope className="text-xl" />,
         },
@@ -84,8 +88,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
             <div className="flex justify-between items-center">
                 <button className="flex items-center gap-2 text-white px-3 py-2 outline outline-gray-100 rounded-lg text-sm">
-                    <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>{" "}
-                    Hire me
+                    <span className="w-2 h-2 rounded-full bg-yellow-500 inline-block"></span>{" "}
+                    Ada project
                 </button>
                 <div className="flex items-center gap-3">
                     <a href="https://github.com/wayantch" target="_blank">
@@ -138,3 +142,4 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
+
