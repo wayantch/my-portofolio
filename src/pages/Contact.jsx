@@ -1,24 +1,44 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import { IoMdMenu } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const Contact = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+
     return (
-        <div className="relative">
-            <div className="">
+        <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+        >
+            <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+            >
                 <h1 className="text-3xl font-semibold text-white">Contact</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+                <p className="text-gray-300">Lorem ipsum dolor sit amet.</p>
+            </motion.div>
+
             <div className="mt-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="">
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <img
                             src="assets/images/customer-support-illustration.png"
-                            alt=""
+                            alt="Customer Support"
                         />
-                    </div>
-                    <div className="m-auto">
+                    </motion.div>
+
+                    <motion.div
+                        className="m-auto"
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <h1 className="text-3xl font-semibold text-white">
                             Get in Touch
                         </h1>
@@ -27,7 +47,7 @@ const Contact = () => {
                             feel free to reach out!
                         </p>
                         <form className="mt-4">
-                            <div className="flex space-x-4">
+                            <div className="flex flex-col md:flex-row md:space-x-4">
                                 <input
                                     type="text"
                                     placeholder="Your Name"
@@ -45,14 +65,18 @@ const Contact = () => {
                                 placeholder="Your Message"
                                 className="w-full p-2 mb-4 rounded-md bg-gray-700 text-white"
                             ></textarea>
-                            <button className="bg-gradient-to-r from-gray-900 to-gray-950 text-white px-4 py-2 rounded-lg">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-gradient-to-r from-gray-900 to-gray-950 text-white px-4 py-2 rounded-lg"
+                            >
                                 Send Message
-                            </button>
+                            </motion.button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

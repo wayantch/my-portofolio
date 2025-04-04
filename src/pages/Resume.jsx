@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Sidebar from "../components/Sidebar";
 import { IoMdMenu } from "react-icons/io";
 
@@ -7,21 +8,34 @@ const Resume = () => {
 
     return (
         <div className="relative">
-
-            {/* Konten Resume */}
-            <div className="max-w-4xl mx-auto p-6 px-4 md:px-6 bg-gray-900 text-white rounded-lg shadow-lg mt-8">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="max-w-4xl mx-auto p-6 px-4 md:px-6 bg-gray-900 text-white rounded-lg shadow-lg mt-8"
+            >
                 {/* Header */}
-                <div className="text-center mb-6">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-center mb-6"
+                >
                     <h1 className="text-2xl md:text-3xl font-bold">
                         Wayan Deva Adhisthanaya
                     </h1>
                     <p className="text-gray-400 text-sm md:text-base">
                         Frontend Developer
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Contact Info */}
-                <div className="flex flex-col md:flex-row md:justify-between gap-2 text-sm md:text-base mb-6 text-left">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex flex-col md:flex-row md:justify-between gap-2 text-sm md:text-base mb-6 text-left"
+                >
                     <p>
                         <strong>Phone:</strong> +62 877 8118 9068
                     </p>
@@ -32,24 +46,31 @@ const Resume = () => {
                         <strong>Address:</strong> Perum. Griya Hegar Asri B9 No
                         16
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Profile Summary */}
-                <div className="mb-6">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="mb-6"
+                >
                     <h2 className="text-lg md:text-xl font-semibold mb-1">
                         Profile Summary
                     </h2>
                     <p className="text-gray-300 text-sm md:text-base">
                         A Frontend Developer with a strong passion for building
-                        responsive and interactive user interfaces. Experienced
-                        in translating UI/UX designs into optimized code and
-                        integrating backend APIs. Additionally, I have Japanese
-                        language proficiency equivalent to JLPT N4.
+                        responsive and interactive user interfaces...
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Education */}
-                <div className="mb-6">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="mb-6"
+                >
                     <h2 className="text-lg md:text-xl font-semibold mb-1">
                         Education
                     </h2>
@@ -67,14 +88,18 @@ const Resume = () => {
                             D3, Information Technology
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Work Experience */}
-                <div className="mb-6">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.0 }}
+                    className="mb-6"
+                >
                     <h2 className="text-lg md:text-xl font-semibold mb-1">
                         Work Experience
                     </h2>
-
                     <div className="text-sm md:text-base mb-4">
                         <p>
                             <strong>Frontend Developer</strong> | September 2024
@@ -84,18 +109,12 @@ const Resume = () => {
                             Politeknik Takumi – Indonesia
                         </p>
                         <ul className="list-disc ml-6 text-gray-300 mt-1">
+                            <li>Developed responsive web interfaces.</li>
                             <li>
-                                Developed responsive and user-friendly web
-                                interfaces.
+                                Translated designs into code using HTML, CSS,
+                                Tailwind, React.
                             </li>
-                            <li>
-                                Translated UI/UX designs into code using HTML,
-                                CSS, Tailwind CSS, and React.js.
-                            </li>
-                            <li>
-                                Collaborated with backend teams to integrate
-                                APIs and improve application performance.
-                            </li>
+                            <li>Integrated APIs.</li>
                         </ul>
                     </div>
 
@@ -109,45 +128,38 @@ const Resume = () => {
                         </p>
                         <ul className="list-disc ml-6 text-gray-300 mt-1">
                             <li>
-                                Acted as a liaison between PT Minori and the
-                                internal team.
+                                Liaison between PT Minori and internal team.
                             </li>
-                            <li>
-                                Ensured effective communication and smooth
-                                project coordination.
-                            </li>
-                            <li>
-                                Prepared reports and supported administrative
-                                processes in industry-academic collaborations.
-                            </li>
+                            <li>Handled project coordination and reports.</li>
                         </ul>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Skills */}
-                <div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
+                >
                     <h2 className="text-lg md:text-xl font-semibold mb-1">
                         Skills
                     </h2>
                     <ul className="list-disc ml-6 text-gray-300 text-sm md:text-base">
                         <li>
-                            <strong>Frontend Development:</strong> HTML, CSS,
-                            Tailwind CSS
+                            <strong>Frontend:</strong> HTML, CSS, Tailwind CSS
                         </li>
                         <li>
-                            <strong>Database Management:</strong> MySQL,
-                            PhpMyAdmin
+                            <strong>Database:</strong> MySQL, PhpMyAdmin
                         </li>
                         <li>
                             <strong>Version Control:</strong> Git, GitHub
                         </li>
                         <li>
-                            <strong>Tools & Platforms:</strong> Figma (UI/UX),
-                            Postman (API Testing)
+                            <strong>Tools:</strong> Figma, Postman
                         </li>
                     </ul>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };
