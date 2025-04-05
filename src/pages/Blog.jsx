@@ -1,26 +1,7 @@
-import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import { IoMdMenu } from "react-icons/io";
+import React from "react";
 import { motion } from "framer-motion";
 
-// Animasi buat efek masuk tiap card
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 const Blog = () => {
-
   return (
     <motion.div
       className="relative"
@@ -45,41 +26,24 @@ const Blog = () => {
         teknologi. Yuk, cekidot! 🚀
       </motion.p>
 
+      {/* Kosong dulu */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible">
-        {/* Blog Post 1 */}
-        <motion.div
-          className="bg-gray-700 p-4 rounded-lg"
-          variants={cardVariants}>
-          <h2 className="text-xl font-semibold text-white">Blog Post 1</h2>
-          <p className="text-gray-300">
-            Cerita singkat tentang blog post pertama saya. Stay tuned, ya!
-          </p>
-        </motion.div>
-
-        {/* Blog Post 2 */}
-        <motion.div
-          className="bg-gray-700 p-4 rounded-lg"
-          variants={cardVariants}>
-          <h2 className="text-xl font-semibold text-white">Blog Post 2</h2>
-          <p className="text-gray-300">
-            Ngebahas hal menarik lain seputar dunia koding. Simak terus, ya!
-          </p>
-        </motion.div>
-
-        {/* Blog Post 3 */}
-        <motion.div
-          className="bg-gray-700 p-4 rounded-lg"
-          variants={cardVariants}>
-          <h2 className="text-xl font-semibold text-white">Blog Post 3</h2>
-          <p className="text-gray-300">
-            Postingan santai tapi penuh ilmu. Coba deh baca, siapa tahu
-            bermanfaat 😉
-          </p>
-        </motion.div>
+        className="flex flex-col items-center justify-center text-center bg-gray-800 p-8 rounded-xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}>
+        <img
+          src="assets/images/no-data.svg"
+          alt="Belum ada artikel"
+          className="w-64 mb-4"
+        />
+        <h2 className="text-white text-2xl font-semibold">
+          Belum ada artikel 😢
+        </h2>
+        <p className="text-gray-400 mt-2">
+          Tapi tenang aja, artikel-artikel keren lagi on the way... Stay tuned
+          ya! ✨
+        </p>
       </motion.div>
     </motion.div>
   );

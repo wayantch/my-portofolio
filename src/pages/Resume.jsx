@@ -5,18 +5,27 @@ const Resume = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="relative">
+      <div className="md:p-10 relative">
+          <div className="md:text-end">
+          <a
+            href="assets/WayanDevaAdhisthanaya_CV.pdf"
+            download="WayanDevaAdhisthanaya_CV.pdf"
+            className="italic text-sm hover:underline">
+            Unduh resume
+          </a>
+        </div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-4xl mx-auto p-6 px-4 md:px-6 bg-gray-900 text-white rounded-lg shadow-lg mt-8">
+        className=" mx-auto p-6 px-4 md:px-6 bg-gray-900 text-white rounded-lg shadow-lg mt-4 relative">
         {/* Header */}
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-6">
+          className=" mb-6">
           <h1 className="text-2xl md:text-3xl font-bold">
             Wayan Deva Adhisthanaya
           </h1>
@@ -30,7 +39,7 @@ const Resume = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="flex flex-col md:flex-row md:justify-between gap-2 text-sm md:text-base mb-6 text-left">
+          className="flex flex-col lg:flex-row lg:justify-between gap-2 text-sm lg:text-base mb-6 text-left">
           <p>
             <strong>Telepon:</strong> +62 877 8118 9068
           </p>

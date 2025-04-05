@@ -13,8 +13,12 @@ import { IoCodeSlash } from "react-icons/io5";
 import { SiTailwindcss, SiMysql } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import useFetchTestimonial from "../hooks/useFetchTestimonial";
 
 const Homepage = () => {
+  // Hooks
+//   const { testimonials, loading, error } = useFetchTestimonial();
+
   const SKILLS = [
     { name: "HTML", icon: <FaHtml5 className="text-xl text-orange-600" /> },
     { name: "CSS", icon: <FaCss3 className="text-xl text-blue-600" /> },
@@ -68,14 +72,14 @@ const Homepage = () => {
         animate="visible"
         variants={fadeIn}>
         <div>
-          <p className="text-lg">Hi,</p>
+          <p className="text-lg">Haloo,</p>
           <h1 className="text-2xl md:text-3xl font-bold text-white">
-            I'm Wayan Deva Adhisthanaya
+            Saya Wayan Deva Adhisthanaya
           </h1>
         </div>
-        <div className="md:text-end text-gray-400">
-          <p>Based in Bekasi, Indonesia</p>
-          <p>Onsite & Remote</p>
+        <div className="lg:text-end text-gray-400">
+          <p>Berasal dari Bekasi, Indonesia</p>
+          <p> Remote</p>
         </div>
       </motion.div>
 
@@ -144,7 +148,10 @@ const Homepage = () => {
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="mt-3 bg-gradient-to-r from-gray-900 to-gray-950 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+          className="mt-3 bg-gradient-to-r cursor-pointer from-gray-900 to-gray-950 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+          onClick={() =>
+            (window.location.href = "/contact")
+          }>
           <FaEnvelope /> Yuk, Ngobrol!
         </motion.button>
       </motion.div>
@@ -163,7 +170,7 @@ const Homepage = () => {
             Lihat Semua
           </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
