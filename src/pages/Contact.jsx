@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Contact1 from '../assets/images/undraw_complete-form_aarh.svg'
 
 const Contact = () => {
 
@@ -26,7 +27,7 @@ const Contact = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}>
             <img
-              src="/src/assets/images/undraw_complete-form_aarh.svg"
+              src={Contact1}
               alt="Customer Support"
             />
           </motion.div>
